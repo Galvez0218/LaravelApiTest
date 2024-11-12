@@ -1,0 +1,16 @@
+app/
+│
+├── Core/                      # Lógica de negocio
+│   ├── Entities/              # Entidades del dominio
+│   ├── UseCases/              # Casos de uso
+│   └── Services/              # Servicios de dominio
+│
+├── Ports/                     # Interfaces
+│   ├── Repositories/          # Interfaces de repositorios
+│   └── Services/              # Interfaces de servicios
+│
+└── Adapters/                  # Implementaciones
+    ├── Repositories/          # Implementaciones de repositorios (ej. Eloquent)
+    └── Services/              # Implementaciones de servicios externos
+
+
