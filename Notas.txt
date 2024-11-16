@@ -14,3 +14,52 @@ app/
     └── Services/              # Implementaciones de servicios externos
 
 
+
+-- ESTRUCTURA PARA NUESTRO PROYECTO
+
+project-root/
+├── src/
+│   ├── Core/
+│   │   ├── Domain/
+│   │   │   ├── Entities/
+│   │   │   ├── Repositories/
+│   │   │   └── ValueObjects/
+│   │   ├── Application/
+│   │   │   ├── UseCases/
+│   │   │   ├── DTOs/
+│   │   │   ├── Validators/
+│   │   │   └── Services/
+│   │   └── Contracts/
+│   ├── Infrastructure/
+│   │   ├── Controllers/
+│   │   ├── Requests/
+│   │   ├── Repositories/
+│   │   ├── Services/
+│   │   ├── Jobs/
+│   │   ├── Providers/
+│   │   └── Database/
+│   │       ├── Migrations/
+│   │       ├── Seeders/
+│   │       └── Factories/
+│   ├── Bootstrap/
+│   │   └── Providers/
+│   └── config/
+│       └── config-hexagonal.php
+├── tests/
+│   ├── Unit/
+│   ├── Feature/
+│   └── Integration/
+├── public/
+├── routes/
+│   ├── web.php
+│   └── api.php
+├── bootstrap/
+├── storage/
+├── database/
+│   ├── seeders/  (para semillas globales)
+│   ├── factories/ (para factories globales)
+│   └── migrations/ (migraciones que puedes dejar aquí)
+├── .env
+├── composer.json
+└── artisan
+

@@ -1,7 +1,8 @@
 <?php
 
-require_once __DIR__ . "../src/bootstrap/Provider.php";
+$providers = include_once __DIR__ . "/../src/Bootstrap/providers.php";
 
 return [
     App\Providers\AppServiceProvider::class,
+    ...$providers,
 ];
