@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Src\Auth\Infrastructure\Providers;
 
-use Carbon\Laravel\ServiceProvider;
+use Illuminate\Support\ServiceProvider;
+use Src\Auth\Domain\Repositories\AuthRepositoryInterface;
 use Src\Auth\Infrastructure\Persistances\Eloquent\AuthEloquent;
 
 class AuthProvider extends ServiceProvider
@@ -14,8 +15,10 @@ class AuthProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // $this->app->singleton(abstract: ClassroomVirtualRepository::class, function () {
-        //     return new AuthEloquent();
-        // });
+        // dd((new AuthRepositoryInterface('user'))->getUserByUsername);
+        $this->app->singleton(AuthRepositoryInterface::class, function () {
+            return new AuthEloquent();
+        });
+        // $this->app->bind(AuthRepositoryInterface::class, AuthEloquent::class);
     }
 }

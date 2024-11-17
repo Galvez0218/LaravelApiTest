@@ -2,9 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Src\Auth\Infrastructure\Persistances\Eloquent\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,9 +18,22 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'admin@admin.com',
-        ]);
+        User::updateOrInsert(
+            ['id' => 1],
+            fn($exists) => $exists ?
+                [
+                    // 'username' => 'admin',
+                    // 'email' => 'admin@admin.com',
+                    // 'password' => static::$password ??= Hash::make('password'),
+                ] : [
+                    'username' => 'admin',
+                    'email' => 'admin@admin.com',
+                    'password' => Hash::make('password'),
+                ],
+        );
+        // create([
+        //     'username' => 'admin',
+        //     'email' => 'admin@admin.com',
+        // ]);
     }
 }

@@ -20,13 +20,11 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
+            "App\\": "app/",
+            "Src\\": "src/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        },
-        "classmap": [
-            "src/Bootstrap/"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
