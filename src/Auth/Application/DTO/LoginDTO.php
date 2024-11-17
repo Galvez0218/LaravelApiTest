@@ -12,6 +12,6 @@ readonly class LoginDTO
     public function __construct(
         public string $username,
         public string $password,
-        // public ?string $token = null
+        public ?string $token = null
     ) {}
 }

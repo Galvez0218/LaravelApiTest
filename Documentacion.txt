@@ -1,0 +1,2 @@
+-- instalar
+php artisan install:api

@@ -9,5 +9,6 @@ class AuthEntity
         public string $username,
         public string $password,
         public ?string $email = null,
+        public ?string $token = null,
     ) {}
 }

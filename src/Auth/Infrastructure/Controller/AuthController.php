@@ -32,8 +32,7 @@ class AuthController extends Controller
 
             // Llamamos al servicio de autenticación
             $data = $this->authService->handleLogin($dataDTO);
-            dd("data", $data);
-            // $result = $this->loginUseCase->execute($dto);
+
             return response()->json([
                 'message' => 'Login successful',
                 'data' => $data,

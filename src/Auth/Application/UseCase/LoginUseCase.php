@@ -21,18 +21,13 @@ class LoginUseCase
 
         LoginValidator::validateCredentials($user, $loginDTO->password);
 
-        $userModel = new User();
+        $userModel = User::find($user->id);
+
         // Generamos un token de autenticación
         $token = $userModel->createToken('auth_token')->plainTextToken;
-
-        $user->merge(['token' => $token]);
+        $user->token = $token;
 
         return $user;
-        // [
-        //     'success' => true,
-        //     $user,
-        //     'token' => $token
-        // ];
     }
 
     /**
