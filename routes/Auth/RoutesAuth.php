@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Src\Auth\Infrastructure\Controller\AuthController;
+use Src\Core\Auth\Infrastructure\Controller\AuthController;
 
 Route::prefix('admin/auth')
     ->name('auth.')

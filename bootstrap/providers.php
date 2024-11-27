@@ -1,8 +1,9 @@
 <?php
 
-$providers = include_once __DIR__ . "/../src/Bootstrap/providers.php";
+use Src\Bootstrap\Providers;
 
 return [
     App\Providers\AppServiceProvider::class,
-    ...$providers,
+    Providers::loadProviders(),
+    // ...$providers,
 ];
