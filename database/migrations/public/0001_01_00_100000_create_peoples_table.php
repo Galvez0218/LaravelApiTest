@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('names', 50);
             $table->string('paternal_surname', 50);
             $table->string('maternal_surname', 50);
-            $table->date('user_created');
-            $table->date('user_edit');
+            $table->date('user_created')->nullable();
+            $table->date('user_edit')->nullable();
             $table->boolean('flag')->default(true);
             $table->timestamps();
         });
@@ -36,8 +36,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::enableForeignKeyConstraints();
-        Schema::dropIfExists('peoples');
         Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('peoples');
+        Schema::enableForeignKeyConstraints();
     }
 };
